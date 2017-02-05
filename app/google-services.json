@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "90458051924",
+    "firebase_url": "https://silverchef-94617.firebaseio.com",
+    "project_id": "silverchef-94617",
+    "storage_bucket": "silverchef-94617.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:90458051924:android:b5bf56fc0675dbdd",
+        "android_client_info": {
+          "package_name": "com.example.chinz_000.silverchef"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "90458051924-m3jkianlpcdcml2nhs84l69q44cng0v4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBgqrAMg1xNLWQvnHESX0RAABnMxR_GKcw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "90458051924-m3jkianlpcdcml2nhs84l69q44cng0v4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

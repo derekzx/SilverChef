@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.chinz_000.silverchef.LandingPage">
+
+    <RadioButton
+        android:text="Teacher"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginStart="50dp"
+        android:id="@+id/teacherButton"
+        android:onClick="studentMain"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <RadioButton
+        android:text="Student"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/studentButton"
+
+        android:onClick="teacherMain"
+        android:layout_marginRight="65dp"
+        android:layout_marginEnd="65dp"
+        android:layout_alignBaseline="@+id/teacherButton"
+        android:layout_alignBottom="@+id/teacherButton"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Are you a teacher or a student?"
+        android:id="@+id/question"
+        android:typeface="normal"
+        android:fontFamily="sans-serif"
+        android:textSize="36sp"
+        android:textAlignment="center"
+        android:layout_marginBottom="62dp"
+        android:layout_alignBottom="@+id/teacherButton"
+        android:layout_centerHorizontal="true" />
+</RelativeLayout>
