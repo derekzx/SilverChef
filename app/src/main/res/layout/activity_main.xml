@@ -9,44 +9,77 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.chinz_000.silverchef.LandingPage">
-
-    <RadioButton
-        android:text="Teacher"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="50dp"
-        android:layout_marginStart="50dp"
-        android:id="@+id/teacherButton"
-        android:onClick="studentMain"
-        android:layout_centerVertical="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <RadioButton
-        android:text="Student"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/studentButton"
-
-        android:onClick="teacherMain"
-        android:layout_marginRight="65dp"
-        android:layout_marginEnd="65dp"
-        android:layout_alignBaseline="@+id/teacherButton"
-        android:layout_alignBottom="@+id/teacherButton"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+    tools:context="com.example.chinz_000.silverchef.LandingPage"
+    android:background="#C7D8C6">
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Are you a teacher or a student?"
+        android:text="Are you a mentor or a student?"
         android:id="@+id/question"
         android:typeface="normal"
         android:fontFamily="sans-serif"
         android:textSize="36sp"
         android:textAlignment="center"
-        android:layout_marginBottom="62dp"
-        android:layout_alignBottom="@+id/teacherButton"
-        android:layout_centerHorizontal="true" />
+        android:background="@drawable/rounded_corner"
+        android:backgroundTint="#EFD9C1"
+        android:textColor="#ffffff"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:layout_marginTop="34dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <ImageButton
+        android:layout_width="200dp"
+        android:layout_height="175dp"
+        android:scaleType="fitCenter"
+        android:adjustViewBounds="true"
+        app:srcCompat="@drawable/studentbutton"
+        android:id="@+id/studentButton"
+        android:onClick="studentMain"
+        android:background = "@null"
+        android:layout_marginBottom="38dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <ImageButton
+        android:scaleType="fitCenter"
+        android:adjustViewBounds="true"
+        android:layout_height="175dp"
+        app:srcCompat="@drawable/mentorbutton"
+        android:id="@+id/teacherButton"
+        android:onClick="teacherMain"
+        android:layout_width="200dp"
+        android:background = "@null"
+        android:layout_above="@+id/studentButton"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:text="Mentor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/mentorText"
+        android:textColor="#ffffff"
+        android:textSize="24sp"
+        android:layout_marginBottom="69dp"
+        android:layout_above="@+id/studentButton"
+        android:layout_toRightOf="@+id/teacherButton"
+        android:layout_toEndOf="@+id/teacherButton" />
+
+    <TextView
+        android:text="Student"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/studentText"
+        android:textColor="#ffffff"
+        android:textSize="24sp"
+        android:layout_marginBottom="61dp"
+        android:layout_alignBottom="@+id/studentButton"
+        android:layout_toRightOf="@+id/studentButton"
+        android:layout_toEndOf="@+id/studentButton" />
+
 </RelativeLayout>

@@ -4,4 +4,13 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="black_overlay">#66000000</color>
+    <color name="homeScreenBackground">#849091</color>
+
+    <color name="chatColor">#F07C35</color>
+    <color name="videoColor">#819191</color>
+    <color name="syncColor">#8964D4</color>
+    <color name="notifyColor">#F07C35</color>
+
+    <color name="exampleItemBackground">#0D112B</color>
+
 </resources>

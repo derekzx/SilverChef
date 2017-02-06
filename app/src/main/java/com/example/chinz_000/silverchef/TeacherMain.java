@@ -27,10 +27,17 @@ public class TeacherMain extends AppCompatActivity {
                 mTextField.setText("done!");
             }
         }.start();
+
         final Button adviseStudent = (Button) findViewById(R.id.adviseStudent);
         adviseStudent.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 startActivity(new Intent(TeacherMain.this, ChooseDish.class));
+            }
+        });
+        final Button findChat = (Button) findViewById(R.id.videoButton);
+        findChat.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                startActivity(new Intent(TeacherMain.this, VideoActivity.class));
             }
         });
     }

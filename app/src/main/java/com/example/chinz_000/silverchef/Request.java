@@ -5,43 +5,42 @@ package com.example.chinz_000.silverchef;
  */
 public class Request {
     private String dish;
-    private int day;
-    private int month;
-    private int year;
 
-    private int hour;
-    private int min;
-
-    private int[] timestamp;
-    private boolean ampm;
+    private int hhmmp;
+    private int ddmmyy;
 
     private boolean accepted;
     private int menteeid;
     private int mentorid;
+    private String menteeName;
+    private String mentorName = " ";
     private int requestid;
     private static int requestidCount=1;
 
-    public Request(String dish, int day, int month, int year, int hour, int min,
-                   boolean ampm){
+    public Request(){}
+
+//    public Request(String dish, int day, int month, int year, int hour, int min,
+//                   int ampm){
+//        this.dish = dish;
+//        this.day = day;
+//        this.month = month;
+//        this.year = year;
+//
+//        this.hour = hour;
+//        this.min = min;
+//        this.ampm = ampm;
+//
+//        this.accepted=false;
+//        this.requestid=++requestidCount;
+//        //set user id
+//    }
+
+    public Request (String dish, int hhmmp, int ddmmyy, int menteeid, String menteeName){
         this.dish = dish;
-        this.day = day;
-        this.month = month;
-        this.year = year;
-
-        this.hour = hour;
-        this.min = min;
-        this.ampm = ampm;
-
-        this.accepted=false;
-        this.requestid=++requestidCount;
-        //set user id
-    }
-
-    public Request (String dish, int[] timestamp, boolean ampm, int menteeid){
-        this.dish = dish;
-        this.timestamp = timestamp; //HHmmDDMMYYYY
-        this.ampm = ampm;
+        this.hhmmp = hhmmp;
+        this.ddmmyy = ddmmyy;//HHmmAMDDMMYYYY
         this.menteeid = menteeid;
+        this.menteeName = menteeName;
         this.requestid=++requestidCount;
     }
 
@@ -49,29 +48,39 @@ public class Request {
         return dish;
     }
 
-    public int getDay(){
-        return timestamp[2];
+    public String getMenteeName(){
+        return menteeName;
     }
 
-    public int getMonth(){
-        return timestamp[3];
+    public String getMentorName(){return mentorName; }
+
+    public void setMentorName(String name){
+        this.mentorName = name;
     }
 
-    public int getYear(){
-        return timestamp[4];
-    }
-
-    public int getHour(){
-        return timestamp[0];
-    }
-
-    public int getMin(){
-        return timestamp[1];
-    }
-
-    public boolean getAmpm(){
-        return ampm;
-    }
+//    public int getDay(){
+//        return timestamp[3];
+//    }
+//
+//    public int getMonth(){
+//        return timestamp[4];
+//    }
+//
+//    public int getYear(){
+//        return timestamp[5];
+//    }
+//
+//    public int getHour(){
+//        return timestamp[0];
+//    }
+//
+//    public int getMin(){
+//        return timestamp[1];
+//    }
+//
+//    public int getAmpm(){
+//        return timestamp[2];
+//    }
 
     public int getMenteeid(){
         return menteeid;
@@ -81,12 +90,18 @@ public class Request {
         return mentorid;
     }
 
-    public int[] getMeetingTimestamp(){//HHmmDDMMYY
-        return timestamp;
+    public int getHhmmp(){//HHmmDDMMYY
+        return hhmmp;
     }
+
+    public int getDdmmyy(){ return ddmmyy; }
 
     public int getRequestid(){
         return requestid;
+    }
+
+    public boolean getAccepted(){
+        return accepted;
     }
 
 

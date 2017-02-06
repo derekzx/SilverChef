@@ -4,19 +4,16 @@ package com.example.chinz_000.silverchef;
  * Created by chinz_000 on 5/2/2017.
  */
 public class User{
-    private int user_id;
     private String name;
     private boolean old;
-    private int tel;
+    private int tel; //tel serves as id
 
     public User() {}
-    public User(int userId, boolean age) {
-        user_id = userId;
+    public User(boolean age) {
         old = age;
     }
 
-    public void setUser(int userId, boolean age){
-        user_id = userId;
+    public void setUser(boolean age){
         old = age;
     }
     public void setName(String Name) {
@@ -26,9 +23,6 @@ public class User{
         tel = Tel;
     }
 
-    public int getId() {
-        return user_id;
-    }
 
     public boolean getAge() {
         return old;

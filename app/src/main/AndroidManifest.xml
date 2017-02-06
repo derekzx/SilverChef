@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.chinz_000.silverchef">
+    <uses-feature android:name="android.hardware.camera"/>
+    <uses-feature android:name="android.hardware.camera.autofocus"/>
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
     <uses-permission android:name="android.permission.INTERNET" />
     <application
         android:allowBackup="true"
@@ -18,10 +29,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".StudentMain"
-            android:label="@string/title_activity_student_main"
-            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".TeacherMain" />
         <activity
             android:name=".ChooseDish"
@@ -47,8 +54,31 @@
             android:name=".StartUp"
             android:label="StartUp"
             android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".VideoActivity"/>
+        <activity android:name=".NotifyActivity"/>
 
+        <service
+            android:name=".MyFcmListenerService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
 
+        <service
+            android:name=".MyInstanceIDListenerService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.android.gms.iid.InstanceID" />
+            </intent-filter>
+        </service>
+        <service
+            android:name=".RegistrationIntentService"
+            android:exported="false" />
+        <activity android:name=".ViewRequestStudent"/>
+        <activity
+            android:name=".ViewPendingRequestStudent"
+            android:label="StartUp"
+            android:theme="@style/AppTheme.NoActionBar"/>>
 
 
 

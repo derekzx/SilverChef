@@ -25,6 +25,10 @@ public class Meeting {
         this.passed=true;
     }
 
+    public Integer getRequestId(){
+        return request.getRequestid();
+    }
+
 
 
 }

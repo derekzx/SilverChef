@@ -5,7 +5,7 @@ android {
     buildToolsVersion "25.0.2"
     defaultConfig {
         applicationId "com.example.chinz_000.silverchef"
-        minSdkVersion 15
+        minSdkVersion 21
         targetSdkVersion 25
         versionCode 1
         versionName "1.0"
@@ -21,7 +21,24 @@ android {
         exclude 'META-INF/LICENSE'
         exclude 'META-INF/LICENSE-FIREBASE.txt'
         exclude 'META-INF/NOTICE'
+        exclude 'LICENSE.txt'
+        exclude 'META-INF/LICENSE'
+    }
+    // Specify that we want to split up the APK based on ABI
+    splits {
+        abi {
+            // Enable ABI split
+            enable true
 
+            // Clear list of ABIs
+            reset()
+
+            // Specify each architecture currently supported by the Video SDK
+            include "armeabi-v7a", "arm64-v8a", "x86", "x86_64"
+
+            // Specify that we do not want an additional universal SDK
+            universalApk false
+        }
     }
 }
 
@@ -36,6 +53,17 @@ dependencies {
     compile 'com.firebase:firebase-client-android:2.5.0'
     compile 'com.google.firebase:firebase-database:9.8.0'
     testCompile 'junit:junit:4.12'
+    compile 'com.android.support:recyclerview-v7:25.1.0'
+    compile 'com.android.support:design:25.1.0'
+    compile 'com.twilio:chat-android:0.11.0'
+    compile 'com.jakewharton.timber:timber:4.3.0'
+    compile 'com.twilio:sync-android:0.1.0'
+    compile 'com.twilio:video-android:1.0.0-beta6'
+    compile 'com.koushikdutta.ion:ion:2.1.7'
+    compile 'com.google.android.gms:play-services:10.0.1'
+    compile 'com.squareup.retrofit2:retrofit:2.0.0-beta4'
+    compile 'com.squareup.retrofit2:converter-jackson:2.0.0-beta4'
+    compile 'com.google.firebase:firebase-messaging:10.0.1'
 }
 
 

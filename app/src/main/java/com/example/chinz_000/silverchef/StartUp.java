@@ -9,6 +9,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.*;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 public class StartUp extends AppCompatActivity {
 
     @Override
@@ -67,7 +70,7 @@ public class StartUp extends AppCompatActivity {
                 Integer min = Integer.valueOf(minSpinner.getSelectedItem().toString());
                 String ampm = ampmSpinner.getSelectedItem().toString();
 
-                Integer monthInt;
+                int monthInt=0;
 
                 switch(month){
                     case "Jan":monthInt=1;
@@ -95,13 +98,18 @@ public class StartUp extends AppCompatActivity {
                     case "Dec":monthInt=12;
                         break;
                 }
+                int ampmInt;
+                if(ampm=="am"){
+                    ampmInt = 1;
+                }
+                else ampmInt = 0;
+
+                final String dish = dishText.getText().toString();
+                final int hhmmp = (hour*1000)+(min*10)+ampmInt;
+                final int ddmmyy = (date*10000)+(monthInt*100)+(year%100);
+                final int menteeid = CurrentUser.userid;
 
 
-
-
-                title.setText(month);
-                //save request somewhere
-                //create intent to start dashboard activity
 
                 View view2 = LayoutInflater.from(StartUp.this).inflate(R.layout.confirm_alert, null);
                 AlertDialog.Builder builder = new AlertDialog.Builder(StartUp.this)
@@ -111,6 +119,15 @@ public class StartUp extends AppCompatActivity {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
                                 //create Request
+                                Request request = new Request(dish,hhmmp,ddmmyy,menteeid,CurrentUser.name);
+                                FirebaseDatabase requestDatabase = FirebaseDatabase.getInstance();
+                                //put key
+                                DatabaseReference myRef = requestDatabase.getReference("Request/"+String.valueOf(request.getRequestid()));
+                                //put rest of data
+                                myRef.setValue(request);
+                                CurrentUser.addPending(request);
+                                //add request to user's pending request
+                                //add request to available requests
                                 Intent intent = new Intent(StartUp.this, requestSuccessRedirection.class);
                                 startActivity(intent);
                                 finish();
@@ -121,9 +138,7 @@ public class StartUp extends AppCompatActivity {
                 AlertDialog alert = builder.create();
                 alert.show();
 
-                // send request to new activity?
-                // intent.putExtra(EXTRA_MESSAGE, message);
-                // go to dashboard
+
             }
         });
 
@@ -133,6 +148,7 @@ public class StartUp extends AppCompatActivity {
     @Override
     public void onDestroy()
     {
+
         super.onDestroy();
     }
 }
