@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="com.twilio:video-android-1.0.0-beta6">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/build/intermediates/exploded-aar/com.twilio/video-android/1.0.0-beta6/res" />
+      <root url="jar://$PROJECT_DIR$/build/intermediates/exploded-aar/com.twilio/video-android/1.0.0-beta6/jars/classes.jar!/" />
+      <root url="jar://$PROJECT_DIR$/build/intermediates/exploded-aar/com.twilio/video-android/1.0.0-beta6/jars/libs/libjingle_peerconnection_java.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
